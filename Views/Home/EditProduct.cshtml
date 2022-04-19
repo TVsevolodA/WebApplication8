@@ -1,0 +1,31 @@
+﻿<h2>Изменить информацию о товаре</h2>
+@model WebApplication8.Models.Product
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.Id, "Id")
+        @Html.DisplayFor(m => m.Id)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Title, "Наименование")
+        @Html.DisplayFor(m => m.Title)
+        @Html.HiddenFor(m => m.Title)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Description, "Описание")
+        @Html.DisplayFor(m => m.Description)
+        @Html.HiddenFor(m => m.Description)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Price, "Цена")
+        @Html.DisplayFor(m => m.Price)
+        @Html.HiddenFor(m => m.Price)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Number, "Количество")
+        @Html.EditorFor(m => m.Number, new { type = "number", min = 1, required = "required" })
+    </div>
+    <div>
+        <input type="submit" value="Отправить" />
+    </div>
+}

@@ -1,0 +1,26 @@
+﻿<style>
+    tr, td {
+        border: 1px solid gray;
+        text-align: center;
+        padding: 5px;
+    }
+</style>
+
+<h1>Заказы</h1>
+<a href="/Home/ProductListAdmin">На главную</a>
+@model IEnumerable<WebApplication8.Models.Order>
+<table>
+    <tr>
+        <td>Id заказа</td>
+        <td>Id заказчика</td>
+        <td>Стоимость заказа (руб)</td>
+    </tr>
+    @foreach (WebApplication8.Models.Order c in Model)
+    {
+        <tr>
+            <td>@c.Id</td>
+            <td>@c.Customer_Id</td>
+            <td>@c.Price</td>
+        </tr>
+    }
+</table>

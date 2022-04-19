@@ -1,0 +1,21 @@
+﻿<style>
+    input {
+        padding 10px;
+        margin: 10px;
+    }
+</style>
+
+<h1>Покупка</h1>
+@model WebApplication8.Models.Customer
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.TextBoxFor(model => model.SNP, new { placeholder = "ФИО", required = "required" })
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.Email, new { type= "email", placeholder = "E-mail", required = "required" })
+    </div>
+    <div>
+        <input type="submit" value="Купить" />
+    </div>
+}

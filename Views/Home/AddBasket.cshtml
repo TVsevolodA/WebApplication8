@@ -1,0 +1,29 @@
+﻿<h2>Добавить товар в корзину</h2>
+@model WebApplication8.Models.Product
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div>
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.Description)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Title, "Наименование")
+        @Html.DisplayFor(m => m.Title)
+        @Html.HiddenFor(m => m.Title)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Price, "Цена")
+        @Html.DisplayFor(m => m.Price)
+        @Html.HiddenFor(m => m.Price)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Number, "Количество")
+        @Html.TextBoxFor(model => model.Number, new { type = "number", min = 1, required = "required" })
+        @Html.ValidationMessageFor(model => model.Number)
+    </div>
+    <div>
+        <input type="submit" value="Добавить в корзину" />
+    </div>
+}

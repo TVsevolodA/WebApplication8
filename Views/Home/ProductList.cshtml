@@ -1,0 +1,28 @@
+﻿<style>
+    tr {
+        border: 1px solid gray;
+        text-align: center;
+    }
+
+    tr, td {
+        padding: 5px;
+    }
+</style>
+
+<h1>Список товаров</h1>
+
+<a href="/Home/IndexBasket">Корзина</a>
+<a href="/Home/LoginAdmin">Войти от имени администратора</a>
+
+@model IEnumerable<WebApplication8.Models.Product>
+<table>
+    @foreach (WebApplication8.Models.Product c in Model)
+    {
+        <tr>
+            <td>@c.Title</td>
+            <td>@c.Description</td>
+            <td>@c.Price руб</td>
+            <td><a href="/Home/AddBasket/@c.Id" id="@c.Id">Добавить в корзину</a></td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,27 @@
+﻿<style>
+    div {
+        padding 10px;
+        margin: 10px;
+    }
+</style>
+
+<h2>Добавить товар</h2>
+@model WebApplication8.Models.Product
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.TextBoxFor(model => model.Title, new { placeholder = "Наименование", required = "required" })
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.Description, new { placeholder = "Описание", required = "required" })
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.Price, new { type = "number", min=1, placeholder = "Цена", required = "required" })
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.Number, new { type = "number", min=1, placeholder = "Количество", required = "required" })
+    </div>
+    <div>
+        <input type="submit" value="Добавить" />
+    </div>
+}
